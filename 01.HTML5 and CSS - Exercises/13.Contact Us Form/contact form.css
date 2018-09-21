@@ -1,0 +1,14 @@
+form{
+    background: grey;
+    padding: 10px;
+}
+.left,
+.right{
+    display: inline-block;
+    width: 49%;
+    vertical-align: top;
+}
+label,input{
+    display: block;
+    margin: 10px 0;
+}

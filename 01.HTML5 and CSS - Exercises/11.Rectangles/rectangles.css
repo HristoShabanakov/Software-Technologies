@@ -1,0 +1,11 @@
+div{
+    padding: 15px;
+    border: 2px dotted blue;
+}
+div div{
+    border: dashed red;
+}
+div div div{
+    border:  solid green;
+    text-align: center;
+}

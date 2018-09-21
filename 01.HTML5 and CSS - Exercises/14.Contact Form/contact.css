@@ -1,0 +1,17 @@
+form{
+    background: gray;
+    padding: 10px;
+}
+label{
+    display: block;
+    margin: 5px;
+    text-align: left;
+}
+input,
+select{
+    float: right;
+    width: 40%;
+}
+form{
+    text-align: center;
+}
