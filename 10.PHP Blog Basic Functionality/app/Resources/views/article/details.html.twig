@@ -18,6 +18,12 @@
                 </small>
 
                 <footer>
+                    <div>
+                        <a class="btn btn-primary btn-xs"
+                           href="{{ path('article_edit', {'id':article.id}) }}">Edit</a>
+                        <a class="btn btn-danger btn-xs"
+                        href="{{ path('article_delete', {'id':article.id}) }}">Delete</a>
+                    </div>
                     <div class="pull-right">
                         <a class="btn btn-default btn-xs" href="{{ path('blog_index') }}">back &raquo;</a>
                     </div>
