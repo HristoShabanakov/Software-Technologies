@@ -1,3 +1,0 @@
-app:
-    resource: '@CalculatorBundle/Controller/'
-    type: annotation
