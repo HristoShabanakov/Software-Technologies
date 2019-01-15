@@ -1,0 +1,35 @@
+﻿@model Lab
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="wrapper">
+    @using (Html.BeginForm("Edit", "Lab", FormMethod.Post, new { @class = "lab-create" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="create-header">
+            Edit Lab
+        </div>
+        <div class="create-name">
+            <div class="create-label">Name</div>
+            <input class="create-content" name="name" value="@Model.Name" />
+        </div>
+        <div class="create-name">
+            <div class="create-label">Capacity</div>
+            <input class="create-content" type="number" name="capacity" value="@Model.Capacity" />
+        </div>
+        <div class="create-name">
+            <div class="create-label">Status</div>
+            @Html.DropDownList(nameof(Model.Status), new []
+            {
+                new SelectListItem{Text = "Free", Value = "Free", Selected = Model.Status =="Free"},
+                new SelectListItem{Text = "Busy", Value = "Busy", Selected = Model.Status == "Busy"},
+            }, new {@class = "create-submit"})
+        </div>
+        <div class="create-button-holder">
+            <button type="submit" class="submit-button">Edit</button>
+            <a type="button" href="/" class="back-button">Back</a>
+        </div>
+    }
+</div>

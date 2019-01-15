@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Lab>
+
+@{
+    ViewData["Title"] = "SoftUni Labs";
+}
+<div class="wrapper">
+    <div class="lab-create">
+        <div class="create-header">
+            SoftUni Labs
+        </div>
+    </div>
+    <br />
+    <div class="button-holder">
+        <a type="button" href="/create" class="log-button">Create Lab</a>
+    </div>
+    <div class="content">
+        <div class="header">
+            <div class="lab-label">Name</div>
+            <div class="lab-label">Capacity</div>
+            <div class="lab-label">Status</div>
+            <div class="lab-label">Actions</div>
+        </div>
+        <div class="main">
+            @foreach (var lab in Model.ToList())
+            {
+                <div class="lab">
+                    <div class="lab-name">
+                        @(lab.Name)
+                    </div>
+                    <div class="lab-name">
+                        @(lab.Capacity)
+                    </div>
+                    <div class="lab-name">
+                        @(lab.Status)
+                    </div>
+                    <div class="lab-actions">
+                        @Html.ActionLink("Edit", "Edit", "Lab", new { id = lab.Id }, new { @class = "edit-button" })
+                        @Html.ActionLink("Archive", "Delete", "Lab", new { id = lab.Id }, new { @class = "delete-button" })
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

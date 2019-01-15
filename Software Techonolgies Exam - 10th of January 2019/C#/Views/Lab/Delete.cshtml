@@ -1,0 +1,31 @@
+﻿@model Lab
+
+@{
+    ViewData["Title"] = "Archive";
+}
+
+<div class="wrapper">
+    @using (Html.BeginForm("Delete", "Lab", FormMethod.Post, new { @class = "lab-create" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="create-header">
+            Archive Lab
+        </div>
+        <div class="create-name">
+            <div class="create-label">Name</div>
+            <input class="create-content" name="from" value="@Model.Name" disabled="disabled" />
+        </div>
+        <div class="create-name">
+            <div class="create-label">Capacity</div>
+            <input class="create-content" name="capacity" value="@Model.Capacity" disabled="disabled" />
+        </div>
+        <div class="create-name">
+            <div class="create-label">Status</div>
+            <input class="create-content" name="status" disabled="disabled" value="@Model.Status" />
+        </div>
+        <div class="create-button-holder">
+            <button type="submit" class="submit-button">Archive</button>
+            <a type="button" href="/" class="back-button">Back</a>
+        </div>
+    }
+</div>

@@ -1,0 +1,34 @@
+﻿@model Lab
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="wrapper">
+    @using (Html.BeginForm("Create", "Lab", FormMethod.Post, new { @class = "lab-create" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="create-header">
+            Create Lab
+        </div>
+        <div class="create-name">
+            <div class="create-label">Name</div>
+            <input class="create-content" name="name" />
+        </div>
+        <div class="create-name">
+            <div class="create-label">Capacity</div>
+            <input class="create-content" type="number" name="capacity" />
+        </div>
+        <div class="create-name">
+            <div class="create-label">Status</div>
+            <select class="create-submit" name="Status">
+                <option value="Free">Free</option>
+                <option value="Busy">Busy</option>
+            </select>
+        </div>
+        <div class="create-button-holder">
+            <button type="submit" class="submit-button">Add</button>
+            <a type="button" href="/" class="back-button">Back</a>
+        </div>
+    }
+</div>
