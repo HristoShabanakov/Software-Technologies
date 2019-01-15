@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+
+{% block main %}
+    <div class="wrapper">
+        <form class="lab-create" method="post">
+            <div class="create-header">
+                Archive Lab
+            </div>
+            <div class="create-name">
+                <div class="create-label">Name</div>
+                <input class="create-content" name="lab[name]" readonly value="{{ lab.name }}"/>
+            </div>
+            <div class="create-name">
+                <div class="create-label">Capacity</div>
+                <input class="create-content" name="lab[capacity]" readonly value="{{ lab.capacity }}"/>
+            </div>
+            <div class="create-name">
+                <div class="create-label">Status</div>
+                <input class="create-content" name="lab[status]" readonly value="{{ lab.status }}"/>
+            </div>
+            <div class="create-button-holder">
+                <button type="submit" class="submit-button">Archive</button>
+                <a type="button" href="/" class="back-button">Back</a>
+            </div>
+            {{ form_row(form._token) }}
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "base.html.twig" %}
+
+{% block main %}
+    <div class="wrapper">
+        <div class="lab-create">
+            <div class="create-header">
+                SoftUni Labs
+            </div>
+        </div>
+        <br>
+        <div class="button-holder">
+            <a type="button" href="/create" class="log-button">Create Lab</a>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div class="lab-label">Name</div>
+                <div class="lab-label">Capacity</div>
+                <div class="lab-label">Status</div>
+                <div class="lab-label">Actions</div>
+            </div>
+            <div class="main">
+                {% for lab in labs %}
+                    <div class="lab">
+                        <div class="lab-name">
+                            {{ lab.name }}
+                        </div>
+                        <div class="lab-name">
+                            {{ lab.capacity }}
+                        </div>
+                        <div class="lab-name">
+                            {{ lab.status }}
+                        </div>
+                        <div class="lab-actions">
+                            <a type="button" href="{{ path('edit', {id: lab.id}) }}" class="edit-button">Edit</a>
+                            <a type="button" href="{{ path('delete', {id: lab.id}) }}"
+                               class="delete-button">Archive</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

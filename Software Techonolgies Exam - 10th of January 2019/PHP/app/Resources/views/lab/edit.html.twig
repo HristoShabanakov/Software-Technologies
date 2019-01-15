@@ -1,0 +1,35 @@
+{% extends "base.html.twig" %}
+
+{% block main %}
+    <div class="wrapper">
+        <form class="lab-create" method="post">
+            <div class="create-header">
+                Edit Lab
+            </div>
+            <div class="create-name">
+                <div class="create-label">Name</div>
+                <input class="create-content" name="lab[name]" value="{{ lab.name }}"/>
+            </div>
+            <div class="create-name">
+                <div class="create-label">Capacity</div>
+                <input class="create-content" name="lab[capacity]" type="number" value="{{ lab.capacity }}"/>
+            </div>
+            <div class="create-name">
+                <div class="create-label">Status</div>
+                <select class="create-submit" name="lab[status]">
+                    <option value="Free" {{ lab is defined and lab.status == 'Free' ? 'selected' : '' }}>
+                        Free
+                    </option>
+                    <option value="Busy" {{ lab is defined and lab.status == 'Busy' ? 'selected' : '' }}>
+                        Busy
+                    </option>
+                </select>
+            </div>
+            <div class="create-button-holder">
+                <button type="submit" class="submit-button">Edit</button>
+                <a type="button" href="/" class="back-button">Back</a>
+            </div>
+            {{ form_row(form._token) }}
+        </form>
+    </div>
+{% endblock %}
