@@ -1,0 +1,26 @@
+<div class="wrapper">
+    <form class="lab-create" method="post" th:action="@{/edit/{id}(id=${lab.id})}">
+        <div class="create-header">
+            Edit Lab
+        </div>
+        <div class="create-name">
+            <div class="create-label">Name</div>
+            <input class="create-content" name="name" th:field="${lab.name}"/>
+        </div>
+        <div class="create-name">
+            <div class="create-label">Capacity</div>
+            <input class="create-content" type="number" name="capacity" th:field="${lab.capacity}"/>
+        </div>
+        <div class="create-name">
+            <div class="create-label">Status</div>
+            <select class="create-submit" name="status" th:field="${lab.status}">
+                <option value="Free" th:selected="${lab.status.equals('Free')}">Free</option>
+                <option value="Busy" th:selected="${lab.status.equals('Busy')}">Busy</option>
+            </select>
+        </div>
+        <div class="create-button-holder">
+            <button type="submit" class="submit-button">Edit</button>
+            <a type="button" href="/" class="back-button">Back</a>
+        </div>
+    </form>
+</div>

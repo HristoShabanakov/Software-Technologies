@@ -1,0 +1,32 @@
+<div class="wrapper" xmlns:th="http://www.w3.org/1999/xhtml">
+    <div class="lab-create">
+        <div class="create-header">
+            SoftUni Labs
+        </div>
+    </div>
+    <br></br>
+    <div class="button-holder">
+        <a type="button" href="/create" class="log-button">Create Lab</a>
+    </div>
+    <div class="content">
+        <div class="header">
+            <div class="lab-label">Name</div>
+            <div class="lab-label">Capacity</div>
+            <div class="lab-label">Status</div>
+            <div class="lab-label">Actions</div>
+        </div>
+        <div class="main">
+            <th:block th:each="lab : ${labs}">
+                <div class="lab">
+                    <div class="lab-name" th:text="${lab.name}"></div>
+                    <div class="lab-name" th:text="${lab.capacity}"></div>
+                    <div class="lab-name" th:text="${lab.status}"></div>
+                    <div class="lab-actions">
+                        <a type="button" th:href="@{/edit/{id}(id=${lab.id})}" class="edit-button">Edit</a>
+                        <a type="button" th:href="@{/delete/{id}(id=${lab.id})}" class="delete-button">Archive</a>
+                    </div>
+                </div>
+            </th:block>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="wrapper">
+    <form class="lab-create" method="post" th:action="@{/delete/{id}(id=${lab.id})}">
+        <div class="create-header">
+            Archive Lab
+        </div>
+        <div class="create-name">
+            <div class="create-label">Name</div>
+            <input class="create-content" name="name" th:field="${lab.name}" disabled="disabled"/>
+        </div>
+        <div class="create-name">
+            <div class="create-label">Capacity</div>
+            <input class="create-content" name="capacity" th:field="${lab.capacity}" disabled="disabled"/>
+        </div>
+        <div class="create-name">
+            <div class="create-label">Status</div>
+            <input class="create-content" name="status" th:field="${lab.status}" disabled="disabled"/>
+        </div>
+        <div class="create-button-holder">
+            <button type="submit" class="submit-button">Archive</button>
+            <a type="button" href="/" class="back-button">Back</a>
+        </div>
+    </form>
+</div>
