@@ -1,1 +1,3 @@
 # Software-Technologies
+
+The <b>"Software Technologies"</b> course provides initial knowledge of the most used software technologies in practice and allows students to orientate which technologies they like in order to study them more thoroughly. Basic concepts from <b>front-end</b> and <b>back-end development</b> are studied. The <b>course</b> consists of <b>four</b> parts: <b>HTML5 development</b> (HTML + CSS + JavaScript + AJAX + REST), <b>PHP Web Development</b> (PHP + MySQL), <b>C # Web Development</b> (ASP.NET MVC + Entity Framework + SQL Server) <b>Java</b> + Spring MVC + Hibernate + MySQL).
